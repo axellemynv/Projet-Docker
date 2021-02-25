@@ -1,0 +1,27 @@
+#!bin/bash
+cd /home/administrateur
+sudo mkdir docker
+cd docker
+sudo mkdir jackett
+sudo mkdir radarr
+sudo mkdir sonarr
+sudo mkdir transmission
+sudo mkdir jellyfin
+sudo mkdir torrents
+sudo mkdir videos
+cd jackett
+sudo mkdir config
+cd ../radarr
+sudo mkdir config
+cd ../sonarr
+sudo mkdir config
+cd ../transmission
+sudo mkdir config
+cd ../jellyfin
+sudo mkdir config
+cd ../torrents
+sudo mkdir downloads
+sudo mkdir watch
+cd ../videos
+sudo mkdir tv
+sudo mkdir movies
