@@ -3,7 +3,7 @@ Ynov Docker Project
 
 Ce projet consiste à créer un environnement multimédia avec des films et séries.
 
-> **IMPORTANT !** Utiliser une distribution Linux, dans notre cas Ubuntu, et utiliser un utilisateur qui se nomme ***administrateur***.
+> :red_circle: **IMPORTANT !** :red_circle: Utiliser une distribution Linux, dans notre cas Ubuntu, et utiliser un utilisateur qui se nomme ***administrateur***.
 > Sinon, modifier la deuxième ligne du fichier script_bash `cd /home/administrateur` par `cd /home/[votre_nom_utilisateur]`. 
 
 ## 1/ Installation Docker Engine + Docker-Compose sous Ubuntu
@@ -91,3 +91,29 @@ $ sudo docker ps -a
 
 ## 3/ Configuration des containers
 
+### 1- Jackett
+
+> S'assurer que vous avec un compte sur YGGtorrent avant de continuer la configuration
+
+1. Aller sur `http://[Adresse IP de votre machine]:9117/`.
+
+2. En bas de page, dans la section `Jackett Configuration` et dans le champs `FlareSolverr API URL` renseigner l'URL de FlareSolverr: `"http://[Adresse Ip de votre machine]:8191/"`.
+3. Cliquer sur `Apply server settings` en haut de section.
+
+4. En haut de page, cliquer sur `Add indexer`.
+5. Trouver l'indexer `YGGtorrent`puis cliquer sur la clé à molette à droit pour le configurer.
+6. Dans `Username`et `Password` rentrer vos logins de votre compte YGGtorrent, puis cliquer sur `Okay`.
+
+7. Cliquer à nouveau sur `Add indexer`.
+8. Trouver l'indexer `GkTorrent`puis cliquer sur le bouton '+' pour l'ajouter.
+
+### 2- Radarr et Sonarr
+
+1. Aller sur `http://[Adresse IP de votre machine]:8989/` et `http://[Adresse IP de votre machine]:7878/`.
+
+ > La configuration qui suit est identique pour Radarr et Sonarr.
+
+2. Aller dans `Settings > Indexers`.
+3. Dans la section `Indexers` cliquer sur le bouton '+'.
+4. Trouver l'option `Torznab` puis cliquer sur `Custom`.
+5. 
