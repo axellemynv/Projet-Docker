@@ -7,6 +7,10 @@ sudo mkdir radarr
 sudo mkdir sonarr
 sudo mkdir transmission
 sudo mkdir jellyfin
+sudo mkdir bazarr
+sudo mkdir organizr
+sudo mkdir nzbhydra2
+sudo mkdir docker_mon
 sudo mkdir torrents
 sudo mkdir videos
 cd jackett
@@ -18,6 +22,14 @@ sudo mkdir config
 cd ../transmission
 sudo mkdir config
 cd ../jellyfin
+sudo mkdir config
+cd ../bazarr
+sudo mkdir config
+cd ../organizr
+sudo mkdir config
+cd ../nzbhydra2
+sudo mkdir config
+cd ../docker_mon
 sudo mkdir config
 cd ../torrents
 sudo mkdir downloads
