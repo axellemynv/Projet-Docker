@@ -2,12 +2,12 @@
 
 ## 1/ Configuration du fichier : haproxy.cfg
 
-Créer puis ouvrir le fichier haproxy.cfg:
+Créer puis ouvrir le fichier haproxy.cfg :
 ```
 root@srv-ubuntu:/home/administrateur/project-haproxy/config/haproxy# nano haproxy.cfg
 ```
 
-Ajouter la configuration suivante:
+Ajouter la configuration suivante :
 ```
 global
     log localhost local0
@@ -35,7 +35,7 @@ Ouvrir le fichier :
 root@srv-ubuntu:/home/administrateur# nano docker-compose.yml
 ```
 
-Ajouter la configuration suivante:
+Ajouter la configuration suivante :
 ```
 ---
 version: "3"
