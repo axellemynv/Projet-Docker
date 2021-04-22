@@ -1,5 +1,9 @@
-# Projet-Muiltimedia
+# Projet-Multimedia
 Ynov Docker Project
+
+## Déploiement du container
+
+
 
 Pull image
 `docker pull traefik`
