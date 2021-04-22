@@ -1,6 +1,8 @@
 # HAPROXY
 
-## 1/ Configuration du fichier : haproxy.cfg
+## Installation + Configuration sans utilisation du script
+
+### 1/ Configuration du fichier : haproxy.cfg
 
 Créer puis ouvrir le fichier haproxy.cfg :
 ```
@@ -28,7 +30,7 @@ backend php_apache_backend
     server php_apache_04 php_apache_04:80 check
 ```
 
-## 2/ Configuration du fichier : docker-compose.yml
+### 2/ Configuration du fichier : docker-compose.yml
 
 Ouvrir le fichier : 
 ```
@@ -78,3 +80,10 @@ services:
       - /home/administrateur/project-haproxy/www:/var/www/html
 ```
 
+## Installation + Configuration avec utilisation du script
+
+Télécharger le fichier `script.bash` et le lancer.
+
+Naviguer dans le dossier **/home/administrateur** avec la commande `cd /home/administrateur`.
+
+Lancer la commande `docker-compose up -d` pour déployer les containers.
