@@ -82,7 +82,7 @@ services:
 
 ## Installation + Configuration avec utilisation du script
 
-Télécharger le fichier `script.bash` et le lancer avec la commande `bash script.bash`.
+Télécharger le fichier `script_bash` et le lancer avec la commande `bash script.bash`.
 
 Naviguer dans le dossier **/home/administrateur** avec la commande `cd /home/administrateur`.
 
