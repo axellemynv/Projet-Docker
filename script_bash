@@ -37,3 +37,70 @@ sudo mkdir watch
 cd ../videos
 sudo mkdir tv
 sudo mkdir movies
+
+cd /home/administrateur
+touch docker-compose.yml
+sudo mkdir project-haproxy
+cd project-haproxy
+sudo mkdir config
+cd config
+sudo mkdir haproxy
+cd haproxy
+cat > /home/administrateur/project-haproxy/config/haproxy/haproxy.cfg << ENDOFFILE
+global
+    log localhost local0
+    log localhost local1 notice
+    daemon
+defaults
+    mode http
+    stats uri /haproxy?stats
+    option forwardfor
+    option httpchk
+frontend php_apache_frontend
+    bind *:80
+    default_backend php_apache_backend
+backend php_apache_backend
+    server php_apache_01 php_apache_01:80 check
+    server php_apache_02 php_apache_02:80 check
+    server php_apache_03 php_apache_03:80 check
+    server php_apache_04 php_apache_04:80 check
+ENDOFFILE
+cd ../../..
+cat > /home/administrateur/docker-compose.yml << ENDOFFILE
+---
+version: "3"
+services:
+  haproxy:
+    container_name: project-haproxy_haproxy
+    image: haproxy
+    depends_on:
+      - php_apache_01
+      - php_apache_02
+      - php_apache_03
+      - php_apache_04
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /home/administrateur/project-haproxy/config/haproxy:/usr/local/etc/haproxy:ro
+    ports:
+      - 80:80
+  php_apache_01:
+    container_name: php_apache_01
+    image: php:7-apache
+    volumes:
+      - /home/administrateur/project-haproxy/www:/var/www/html
+  php_apache_02:
+    container_name: php_apache_02
+    image: php:7-apache
+    volumes:
+      - /home/administrateur/project-haproxy/www:/var/www/html
+  php_apache_03:
+    container_name: php_apache_03
+    image: php:7-apache
+    volumes:
+      - /home/administrateur/project-haproxy/www:/var/www/html
+  php_apache_04:
+    container_name: php_apache_04
+    image: php:7-apache
+    volumes:
+      - /home/administrateur/project-haproxy/www:/var/www/html
+ENDOFFILE
