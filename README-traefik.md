@@ -3,6 +3,9 @@ Ynov Docker Project
 
 ## Déploiement du container
 
+> :red_circle: **IMPORTANT !** :red_circle: Si vous avez déjà lancer le *script-bash* ainsi que le *docker-compose.yml*, passez à l'étape suivante.
+
+
 
 
 Pull image
